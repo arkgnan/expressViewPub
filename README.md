@@ -1,0 +1,2 @@
+##before run  
+`npm install`

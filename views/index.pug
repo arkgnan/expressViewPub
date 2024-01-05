@@ -1,0 +1,28 @@
+html
+    head
+        title= title
+        // ada dua cara include file css
+        //- style
+        //-     include ../public/bootstrap.min.css
+        link(rel='stylesheet', href='bootstrap.min.css')
+    body
+        div.container
+            div.row.mt-5
+                div.col-4.offset-4
+                    include ./header.pug
+                    p=content
+                    - for (var x = 0; x < 3; x++) {
+                    li='item ke '+x
+                    - }
+
+                    each item, index in data
+                        -var nama= item.name
+                        p= nama
+            div.row
+                div.col.text-center
+                    include ./footer.pug
+        // ada dua cara include file js
+        script(src='bootstrap.bundle.min.js')
+        //- script
+        //-     include ../public/bootstrap.bundle.min.js
+
